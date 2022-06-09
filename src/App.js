@@ -1,5 +1,5 @@
 import './App.css';
-import RecursiveCategories from './components/RecursiveCategories/RecursiveCategories';
+import RecursiveCategories from './components/RecursiveCategories';
 import mockCategories from './mockData';
 import {useState} from 'react';
 
