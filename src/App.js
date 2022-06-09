@@ -1,22 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import RecursiveCategories from './components/RecursiveCategories/RecursiveCategories';
+import mockCategories from './mockData';
+import {useState} from 'react';
 
 function App() {
+
+  const [categories, setCategories] = useState(mockCategories);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>WIX.com exercise</h1>
+        <textarea defaultValue={JSON.stringify(categories)} onChange={(e) => setCategories(JSON.parse(e.target.value))}/>
+        <p>Recursive rendering</p>
+        <RecursiveCategories categories={categories}/>
+        <p>Imperative rendering</p>
+        {/*  TODO: imperative*/}
       </header>
     </div>
   );
